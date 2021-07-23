@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.fudmed.login.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_registerDoctorFragment"
+            app:destination="@id/registerDoctorFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_registerPatientFragment"
+            app:destination="@id/registerPatientFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registerDoctorFragment"
+        android:name="com.example.fudmed.register.RegisterDoctorFragment"
+        android:label="Register as a Doctor"
+        tools:layout="@layout/fragment_register_doctor" />
+    <fragment
+        android:id="@+id/registerPatientFragment"
+        android:name="com.example.fudmed.register.RegisterPatientFragment"
+        android:label="Register as a Patient"
+        tools:layout="@layout/fragment_register_patient" />
+    <fragment
+        android:id="@+id/appointmentsFragment"
+        android:name="com.example.fudmed.appointments.AppointmentsFragment"
+        android:label="fragment_appointments"
+        tools:layout="@layout/fragment_appointments" />
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.fudmed.home.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/healthUpdatesFragment"
+        android:name="com.example.fudmed.healthupdate.HealthUpdatesFragment"
+        android:label="fragment_health_updates"
+        tools:layout="@layout/fragment_health_updates" />
+</navigation>
