@@ -2,11 +2,8 @@ package com.example.fudmed.home
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.recyclerview.widget.DiffUtil
-import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.enike.fudedu.databinding.SingleClassItemBinding
-import com.enike.fudedu.ui.createNewClass.GroupModel
+import com.example.fudmed.databinding.SingleDoctorItemBinding
 import com.example.fudmed.register.DoctorModel
 
 class HomeAdapter(var data : ArrayList<DoctorModel>, var listener : ClickListener) : RecyclerView.Adapter<HomeAdapter.ClassItem>() {
@@ -34,9 +31,9 @@ class HomeAdapter(var data : ArrayList<DoctorModel>, var listener : ClickListene
         }
     }
 
-    class ClassItem (var binding : SingleClassItemBinding) : RecyclerView.ViewHolder(binding.root){
-        fun bind(item : GroupModel, listener: ClickListener){
-            binding.classItem = item
+    class ClassItem (var binding : SingleDoctorItemBinding ) : RecyclerView.ViewHolder(binding.root){
+        fun bind(item : DoctorModel, listener: ClickListener){
+            binding.doctorItem = item
             binding.clicks = listener
             binding.groupName.setOnClickListener {
 
@@ -47,7 +44,7 @@ class HomeAdapter(var data : ArrayList<DoctorModel>, var listener : ClickListene
         companion object {
             fun from(parent: ViewGroup) : ClassItem {
                 val inflater = LayoutInflater.from(parent.context)
-                val binding = SingleClassItemBinding.inflate(inflater,parent,false)
+                val binding = SingleDoctorItemBinding.inflate(inflater,parent,false)
                 return ClassItem(binding)
             }
         }

@@ -3,6 +3,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <data>
+        <variable
+            name="clicks"
+            type="com.example.fudmed.home.HomeAdapter.ClickListener" />
+        <variable
+            name="doctor_item"
+            type="com.example.fudmed.register.DoctorModel" />
+    </data>
+
     <com.google.android.material.card.MaterialCardView
         android:layout_marginTop="10dp"
         android:layout_marginBottom="5dp"
