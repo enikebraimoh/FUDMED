@@ -39,6 +39,10 @@ class LoginFragment : Fragment() {
         savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
 
+        if (firebaseAuth.currentUser != null) {
+            findNavController().navigate(R.id.action_loginFragment_to_homeFragment)
+        }
+
         binding = FragmentLoginBinding.inflate(inflater, container, false)
         return binding.root
     }

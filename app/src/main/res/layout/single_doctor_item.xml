@@ -7,12 +7,14 @@
         <variable
             name="clicks"
             type="com.example.fudmed.home.HomeAdapter.ClickListener" />
+
         <variable
             name="doctor_item"
             type="com.example.fudmed.register.DoctorModel" />
     </data>
 
     <com.google.android.material.card.MaterialCardView
+        android:onClick="@{()->clicks.onCLick(doctor_item)}"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="5dp"
         android:layout_marginLeft="10dp"
@@ -37,10 +39,11 @@
                 app:srcCompat="@drawable/ic_baseline_people_24"/>
 
             <TextView
-                tools:text="@string/Lorem_ipsum"
+                tools:text="this is a simple description"
                 android:id="@+id/group_description"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:text="@{doctor_item.occupation}"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/group_name"
                 app:layout_constraintHorizontal_bias="0.5"
@@ -48,12 +51,13 @@
                 app:layout_constraintTop_toBottomOf="@+id/group_name" />
 
             <TextView
-                tools:text="Doctor Name"
+                tools:text="CSC 404"
                 android:id="@+id/group_name"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@{doctor_item.fullName}"
                 app:layout_constraintBottom_toTopOf="@+id/group_description"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/imageView"

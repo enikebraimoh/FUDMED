@@ -7,8 +7,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.navigation.fragment.findNavController
 import com.example.fudmed.R
-import com.example.fudmed.databinding.FragmentRegisterDoctorBinding
 import com.example.fudmed.databinding.FragmentRegisterPatientBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
@@ -39,6 +39,9 @@ class RegisterPatientFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
+
+
+
         binding = FragmentRegisterPatientBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -82,6 +85,7 @@ class RegisterPatientFragment : Fragment() {
                     database.child("Patient Information")
                         .child(userAuth.currentUser?.uid!!).setValue(model)
                     Toast.makeText(requireContext(), "Registration Successful", Toast.LENGTH_SHORT).show()
+                    findNavController().navigate(R.id.action_registerPatientFragment_to_loginFragment)
                     // something
                 } else {
                     Log.d("eshoo", "createUserWithEmail:failure", task.exception)

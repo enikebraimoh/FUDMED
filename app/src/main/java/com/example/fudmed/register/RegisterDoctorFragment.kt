@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.navigation.fragment.findNavController
 import com.example.fudmed.R
 import com.example.fudmed.databinding.FragmentLoginBinding
 import com.example.fudmed.databinding.FragmentRegisterDoctorBinding
@@ -85,7 +86,7 @@ class RegisterDoctorFragment : Fragment() {
                     database.child("Doctors Information")
                         .child(userAuth.currentUser?.uid!!).setValue(model)
                     Toast.makeText(requireContext(), "Registration Successful", Toast.LENGTH_SHORT).show()
-                    // something
+                    findNavController().navigate(R.id.action_registerDoctorFragment_to_loginFragment)
                 } else {
                     Log.d("eshoo", "createUserWithEmail:failure", task.exception)
                     Toast.makeText(requireContext(), task.exception?.localizedMessage, Toast.LENGTH_SHORT).show()

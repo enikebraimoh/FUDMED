@@ -26,8 +26,8 @@ class HomeAdapter(var data : ArrayList<DoctorModel>, var listener : ClickListene
     }
 
     class ClickListener(val clickListener : (classname:String) -> Unit){
-        fun onCLick(classgroup : DoctorModel){
-            clickListener(classgroup.FullName)
+        fun onCLick(doctor : DoctorModel){
+            clickListener(doctor.FullName)
         }
     }
 
@@ -36,10 +36,8 @@ class HomeAdapter(var data : ArrayList<DoctorModel>, var listener : ClickListene
             binding.doctorItem = item
             binding.clicks = listener
             binding.groupName.setOnClickListener {
-
-            }
-
-        }
+         }
+     }
 
         companion object {
             fun from(parent: ViewGroup) : ClassItem {
