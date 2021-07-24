@@ -7,8 +7,9 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.enike.fudedu.databinding.SingleClassItemBinding
 import com.enike.fudedu.ui.createNewClass.GroupModel
+import com.example.fudmed.register.DoctorModel
 
-class HomeAdapter(var data : ArrayList<GroupModel>, var listener : ClickListener) : RecyclerView.Adapter<HomeAdapter.ClassItem>() {
+class HomeAdapter(var data : ArrayList<DoctorModel>, var listener : ClickListener) : RecyclerView.Adapter<HomeAdapter.ClassItem>() {
 
     init {
         notifyDataSetChanged()
@@ -28,8 +29,8 @@ class HomeAdapter(var data : ArrayList<GroupModel>, var listener : ClickListener
     }
 
     class ClickListener(val clickListener : (classname:String) -> Unit){
-        fun onCLick(classgroup : GroupModel){
-            clickListener(classgroup.groupName)
+        fun onCLick(classgroup : DoctorModel){
+            clickListener(classgroup.FullName)
         }
     }
 
