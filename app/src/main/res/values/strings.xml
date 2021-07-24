@@ -2,4 +2,5 @@
     <string name="app_name">FUDMED</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="Lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Metus, at nunc, nunc lobortis convallis tortor, ultrices egestas. Risus tempor facilisi sed mi placerat convallis id feugiat.n</string>
 </resources>
