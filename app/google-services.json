@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "120049090900",
+    "project_id": "fud-med",
+    "storage_bucket": "fud-med.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:120049090900:android:89b444a92f9619adfe88c1",
+        "android_client_info": {
+          "package_name": "com.example.fudmed"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "120049090900-27so0eo1l3jah5uv0kvgsj5oi8nfsv6h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAmnKBiB7EQOv7iHWY_CXjd63x-_ruvxCY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "120049090900-27so0eo1l3jah5uv0kvgsj5oi8nfsv6h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

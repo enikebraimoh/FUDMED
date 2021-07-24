@@ -12,7 +12,6 @@ abstract class BaseFragmet<VB : ViewBinding>(@LayoutRes val layoutRes: Int) :  F
     lateinit var binding : VB
 
 
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
     }
