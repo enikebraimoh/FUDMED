@@ -68,8 +68,8 @@ class AppointmentsFragment : Fragment() {
 
 
                     val adapter = AppointmentsAdapter(listOfDataClasses, AppointmentsAdapter.ClickListener{ classId ->
-                        val sheet = BottomSheetDialogeClass(classId)
-                        sheet.show(requireActivity().supportFragmentManager,"testing")
+                        /*val sheet = BottomSheetDialogeClass(classId)
+                        sheet.show(requireActivity().supportFragmentManager,"testing")*/
                     })
 
                     binding.reyclerview.adapter = adapter

@@ -45,7 +45,7 @@
                         android:layout_height="wrap_content"
                         android:ems="10"
                         android:inputType="textPersonName"
-                        android:hint="TIme?" />
+                        android:hint="Time?" />
 
                     <EditText
                         android:layout_weight="1"
