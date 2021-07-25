@@ -1,15 +1,19 @@
 package com.example.fudmed.home
 
+import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.FragmentManager
 import androidx.navigation.fragment.findNavController
 import com.example.fudmed.R
 import com.example.fudmed.databinding.FragmentHomeBinding
+import com.example.fudmed.home.adoctor.BottomSheetDialogeClass
 import com.example.fudmed.register.DoctorModel
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
@@ -19,12 +23,16 @@ import com.google.firebase.database.ValueEventListener
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 
-class HomeFragment : Fragment() {
+class HomeFragment : Fragment(){
 
     private lateinit var binding: FragmentHomeBinding
 
     var listOfDataClasses = ArrayList<DoctorModel>()
-    var stringOfClassList = ArrayList<String>()
+
+    override fun onResume() {
+        super.onResume()
+        listOfDataClasses.clear()
+    }
 
 
     // database Init
@@ -74,7 +82,8 @@ class HomeFragment : Fragment() {
 
 
                     var adapter = HomeAdapter(listOfDataClasses,HomeAdapter.ClickListener{ classId ->
-                       //navigate or do something
+                       val sheet = BottomSheetDialogeClass(classId)
+                        sheet.show(requireActivity().supportFragmentManager,"testing")
                     })
 
                     binding.reyclerview.adapter = adapter

@@ -6,11 +6,11 @@
     <data>
         <variable
             name="clicks"
-            type="com.example.fudmed.home.HomeAdapter.ClickListener" />
+            type="com.example.fudmed.appointments.AppointmentsAdapter.ClickListener" />
 
         <variable
             name="doctor_item"
-            type="com.example.fudmed.register.DoctorModel" />
+            type="com.example.fudmed.bookappointment.Modd" />
     </data>
 
     <com.google.android.material.card.MaterialCardView
@@ -28,44 +28,31 @@
             android:layout_height="wrap_content"
             android:padding="10dp">
 
-            <ImageView
-                android:id="@+id/imageView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.08"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_baseline_people_24"
-                app:tint="@color/white" />
-
             <TextView
                 android:textColor="@color/white"
-                tools:text="this is a simple description"
                 android:id="@+id/group_description"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="@{doctor_item.occupation}"
+                android:text="@{doctor_item.description}"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/group_name"
                 app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="@+id/group_name"
-                app:layout_constraintTop_toBottomOf="@+id/group_name" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/group_name"
+                tools:text="this is a simple description" />
 
             <TextView
                 android:textColor="@color/white"
-                tools:text="CSC 404"
                 android:id="@+id/group_name"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
+                android:text="@{doctor_item.time}"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="@{doctor_item.fullName}"
                 app:layout_constraintBottom_toTopOf="@+id/group_description"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/imageView"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="CSC 404" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </com.google.android.material.card.MaterialCardView>

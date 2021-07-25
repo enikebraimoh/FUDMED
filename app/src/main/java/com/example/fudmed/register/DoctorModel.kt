@@ -1,6 +1,5 @@
 package com.example.fudmed.register
 
-import android.icu.text.CaseMap
 
 data class DoctorModel (
     val FullName: String,
