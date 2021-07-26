@@ -90,5 +90,8 @@
         <argument
             android:name="doctorname"
             app:argType="string" />
+        <argument
+            android:name="em"
+            app:argType="string" />
     </fragment>
 </navigation>

@@ -34,7 +34,7 @@ class BottomSheetDialogeClass(val email : String,val name : String) : BottomShee
         }
 
         binding.consultMe.setOnClickListener {
-                findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToConsultMeFragment(email))
+                findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToConsultMeFragment(name,email))
             dismiss()
         }
 

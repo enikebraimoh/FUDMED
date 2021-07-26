@@ -77,7 +77,7 @@ class ConsultMeFragment : Fragment() {
             val friendlyMessage = MessageModel(
                 binding.messageEditText.text.toString(),
                 getUserName())
-            db.reference.child(MESSAGES_CHILD).push().setValue(friendlyMessage)
+            db.reference.child(MESSAGES_CHILD).child(arguments.doctorname).push().setValue(friendlyMessage)
             binding.messageEditText.setText("")
         }
 
@@ -85,7 +85,7 @@ class ConsultMeFragment : Fragment() {
 
     private fun getUserName(): String {
         val user = userAuth.currentUser.email
-        return if (user == arguments.doctorname) {
+        return if (user == arguments.em) {
            "Doctor"
         }
         else{
