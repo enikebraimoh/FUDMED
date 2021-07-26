@@ -3,8 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
-
+        <variable
+            name="doctor_item"
+            type="com.example.fudmed.healthupdate.NewsModel" />
     </data>
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -24,6 +27,7 @@
                 android:layout_height="match_parent">
 
                 <ImageView
+                    android:id="@+id/image"
                     android:layout_width="match_parent"
                     android:scaleType="centerCrop"
                     android:src="@drawable/profileimege"
@@ -37,12 +41,14 @@
                     android:layout_height="wrap_content">
 
                     <TextView
+                        android:id="@+id/title"
                         style="@style/TextAppearance.AppCompat.Title"
                         android:text="HEADING"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
 
                     <TextView
+                        android:id="@+id/description"
                         style="@style/TextAppearance.AppCompat.Subhead"
                         android:text="@string/Lorem_ipsum"
                         android:layout_width="match_parent"
