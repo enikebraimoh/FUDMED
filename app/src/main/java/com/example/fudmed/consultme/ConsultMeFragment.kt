@@ -29,6 +29,7 @@ class ConsultMeFragment : Fragment() {
     private val database: DatabaseReference by lazy {
         Firebase.database.reference
     }
+    lateinit var arguments : ConsultMeFragmentArgs
     private lateinit var db: FirebaseDatabase
 
     private val userAuth: FirebaseAuth by lazy {
@@ -39,15 +40,16 @@ class ConsultMeFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        arguments = ConsultMeFragmentArgs.fromBundle(requireArguments())
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_consult_me, container, false)
         return  binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        db = Firebase.database
-        val messagesRef = db.reference.child(MESSAGES_CHILD)
 
+        db = Firebase.database
+        val messagesRef = db.reference.child(MESSAGES_CHILD).child(arguments.doctorname)
 
         val options = FirebaseRecyclerOptions.Builder<MessageModel>()
             .setQuery(messagesRef, MessageModel::class.java)
@@ -82,12 +84,12 @@ class ConsultMeFragment : Fragment() {
     }
 
     private fun getUserName(): String {
-        val user = userAuth.currentUser
-        return if (user != null) {
-            user.uid
+        val user = userAuth.currentUser.email
+        return if (user == arguments.doctorname) {
+           "Doctor"
         }
         else{
-            ANONYMOUS
+            "patient"
         }
     }
 

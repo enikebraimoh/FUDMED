@@ -25,9 +25,9 @@ class HomeAdapter(var data : ArrayList<DoctorModel>, var listener : ClickListene
        return data.size
     }
 
-    class ClickListener(val clickListener : (classname:String) -> Unit){
+    class ClickListener(val clickListener : (email:String,name:String) -> Unit){
         fun onCLick(doctor : DoctorModel){
-            clickListener(doctor.FullName)
+            clickListener(doctor.Email, doctor.FullName)
         }
     }
 

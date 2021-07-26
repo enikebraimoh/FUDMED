@@ -34,7 +34,6 @@ class HomeFragment : Fragment(){
         listOfDataClasses.clear()
     }
 
-
     // database Init
     private val database: DatabaseReference by lazy {
         Firebase.database.reference
@@ -44,9 +43,7 @@ class HomeFragment : Fragment(){
     }
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_home, container, false)
         looping()
@@ -79,9 +76,8 @@ class HomeFragment : Fragment(){
                    binding.shimmerViewContainer.stopShimmer()
                    binding.shimmerViewContainer.visibility = View.GONE
 
-
-                    var adapter = HomeAdapter(listOfDataClasses,HomeAdapter.ClickListener{ classId ->
-                       val sheet = BottomSheetDialogeClass(classId)
+                    var adapter = HomeAdapter(listOfDataClasses,HomeAdapter.ClickListener{ email,name ->
+                       val sheet = BottomSheetDialogeClass(email,name)
                         sheet.show(requireActivity().supportFragmentManager,"testing")
                     })
 
