@@ -38,7 +38,7 @@
 
                     <TextView
                         style="@style/TextAppearance.AppCompat.Title"
-                        android:text="HEADINNG"
+                        android:text="HEADING"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
 
