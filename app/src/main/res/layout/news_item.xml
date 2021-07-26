@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
         <variable
@@ -27,6 +28,7 @@
                 android:layout_height="match_parent">
 
                 <ImageView
+                    app:imageUrl="@{doctor_item.imageUrl}"
                     android:id="@+id/image"
                     android:layout_width="match_parent"
                     android:scaleType="centerCrop"
@@ -41,16 +43,18 @@
                     android:layout_height="wrap_content">
 
                     <TextView
+                        android:text="@{doctor_item.title}"
+                        tools:text="HEADING"
                         android:id="@+id/title"
                         style="@style/TextAppearance.AppCompat.Title"
-                        android:text="HEADING"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
 
                     <TextView
+                        android:text="@{doctor_item.description}"
+                        tools:text="@string/Lorem_ipsum"
                         android:id="@+id/description"
                         style="@style/TextAppearance.AppCompat.Subhead"
-                        android:text="@string/Lorem_ipsum"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
                 </LinearLayout>

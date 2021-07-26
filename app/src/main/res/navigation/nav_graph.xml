@@ -81,11 +81,14 @@
     </fragment>
     <fragment
         android:id="@+id/consultMeFragment"
-        android:name="com.example.fudmed.ConsultMeFragment"
+        android:name="com.example.fudmed.consultme.ConsultMeFragment"
         android:label="Consult Doctor"
         tools:layout="@layout/fragment_consult_me" >
         <action
             android:id="@+id/action_consultMeFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
+        <argument
+            android:name="doctorname"
+            app:argType="string" />
     </fragment>
 </navigation>

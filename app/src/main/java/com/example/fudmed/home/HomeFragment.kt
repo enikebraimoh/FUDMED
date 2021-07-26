@@ -49,7 +49,6 @@ class HomeFragment : Fragment(){
     ): View? {
         // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_home, container, false)
-
         looping()
         binding.shimmerViewContainer.startShimmer()
         binding.image.setOnClickListener {

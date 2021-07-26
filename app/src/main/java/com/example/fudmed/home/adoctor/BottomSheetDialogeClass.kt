@@ -11,6 +11,8 @@ import androidx.fragment.app.FragmentOnAttachListener
 import androidx.navigation.fragment.findNavController
 import com.example.fudmed.R
 import com.example.fudmed.databinding.BottomsheetDialogueBinding
+import com.example.fudmed.home.HomeFragment
+import com.example.fudmed.home.HomeFragmentDirections
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
 class BottomSheetDialogeClass(val name : String) : BottomSheetDialogFragment() {
@@ -32,13 +34,11 @@ class BottomSheetDialogeClass(val name : String) : BottomSheetDialogFragment() {
         }
 
         binding.consultMe.setOnClickListener {
-                findNavController().navigate(R.id.action_homeFragment_to_consultMeFragment)
+                findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToConsultMeFragment(name))
             dismiss()
         }
 
         return binding.root
     }
-
-
 
 }
