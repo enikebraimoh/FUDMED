@@ -46,6 +46,7 @@ class HealthUpdatesFragment : Fragment() {
     ): View? {
         looping()
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_health_updates, container, false)
+        binding.shimmerViewContainer.startShimmer()
         return binding.root
     }
 
@@ -63,13 +64,11 @@ class HealthUpdatesFragment : Fragment() {
                     //Log.d("testing_groups",classModel.groupDescription)
                     listOfDataClasses.add(classModel)
                     Log.d("testing", listOfDataClasses[0].Title)
-                    binding.shimmerViewContainer.stopShimmer()
-                    binding.shimmerViewContainer.visibility = View.GONE
-
 
                     val adapter = NewsAdapter(listOfDataClasses)
-
                     binding.reyclerview.adapter = adapter
+                    binding.shimmerViewContainer.stopShimmer()
+                    binding.shimmerViewContainer.visibility = View.GONE
 
                 }
 

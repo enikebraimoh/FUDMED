@@ -46,6 +46,7 @@ class AppointmentsFragment : Fragment() {
         looping()
         // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_appointments, container, false)
+        binding.shimmerViewContainer.startShimmer()
         return binding.root
     }
 
